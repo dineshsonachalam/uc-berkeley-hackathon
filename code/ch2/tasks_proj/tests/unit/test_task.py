@@ -1,6 +1,6 @@
 """Test the Task data type."""
 from tasks import Task
-
+import pytest
 
 def test_asdict():
     """_asdict() should return a dictionary."""
@@ -34,3 +34,12 @@ def test_member_access():
     assert t.summary == 'buy milk'
     assert t.owner == 'brian'
     assert (t.done, t.id) == (False, None)
+
+# Creating a fixture
+@pytest.fixture()
+def my_fixture():
+    print("\nI'm the fixture")
+
+# using test fixture
+def test_my_fixture(my_fixture):
+    print("I'm the test")

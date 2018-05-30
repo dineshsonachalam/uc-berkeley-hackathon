@@ -30,4 +30,6 @@ def initialized_tasks_db(tmpdir):
     """Connect to db before testing, disconnect after."""
     tasks.start_tasks_db(str(tmpdir), 'tiny')
     yield
+    # return -> sends specified value when called
+    # whereas yield -> produce sequence of values
     tasks.stop_tasks_db()

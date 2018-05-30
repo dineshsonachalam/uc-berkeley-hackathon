@@ -8,9 +8,9 @@ setup(
     license='proprietary',
     description='Minimal Project Task Management',
 
-    author='Brian Okken',
-    author_email='Please use pythontesting.net contact form.',
-    url='https://pragprog.com/book/bopytest',
+    author='Dinesh Sonachalam',
+    author_email='Please use dineshsonachalam@gmail.com for contact.',
+    url='',
 
     packages=find_packages(where='src'),
     package_dir={'': 'src'},
