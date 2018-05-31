@@ -40,4 +40,4 @@ def test_no_present_in_the_list():
 def test_character_lexicography_checker():
     assert 'a'<'b'
 def test_Stringoperation():
-    assert 'fizz' not in 'fizzbuzz'       
+    assert 'fizz' not in 'fizzbuzz'
