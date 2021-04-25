@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/code/Flask_Pytest" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/code/Flask_User_Management_Example" vcs="Git" />
-  </component>
-</project>

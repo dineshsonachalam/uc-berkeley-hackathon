@@ -1,3 +1,0 @@
-"""Placeholder."""
-
-# nothing here yet
