@@ -1,9 +1,4 @@
 # [Diversity metrics](https://diversity.dineshsonachalam.me/)
-[![Build Status](https://api.travis-ci.com/dineshsonachalam/Diversity-metrics.svg?branch=master)](https://travis-ci.com/dineshsonachalam/Diversity-metrics)
-[![](https://img.shields.io/docker/pulls/dineshsonachalam/survaider.svg)](https://hub.docker.com/r/dineshsonachalam/survaider)
-[![](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7-blue.svg)](https://www.python.org/downloads/release/python-370/)
-[![](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/dineshsonachalam/Survaider/blob/master/LICENSE)
-
 
 ### Web app task:
 ```
