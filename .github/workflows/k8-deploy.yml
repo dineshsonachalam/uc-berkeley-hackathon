@@ -20,11 +20,11 @@ jobs:
             -e "MYSQL_ROOT_PASSWORD=simple" \
             -e "MYSQL_DATABASE=adult_dataset" \
             -v $(pwd)/mysql-dump:/docker-entrypoint-initdb.d \
-            mysql:5.7 \
-            --max_allowed_packet=62505856
+            mysql:5.7
             echo $(pwd)
             ls
             sleep 15
+            docker ps
 
         - name: Install backend and frontend dependencies
           run: |
