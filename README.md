@@ -61,4 +61,23 @@ docker run -p 8002:8002 -t dineshsonachalam/survaider:1.0.0
 ```
 
 
-
+```
+dineshsonachalam@macbook gender-diversity-metrics % helm install gender-diversity-app ./helm
+NAME: gender-diversity-app
+LAST DEPLOYED: Sun May  9 20:57:33 2021
+NAMESPACE: kube-system
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+dineshsonachalam@macbook gender-diversity-metrics %
+```
+```
+dineshsonachalam@macbook gender-diversity-metrics % kubectl get deployments -n=dinesh
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+adp-backend       1/1     1            1           21m
+adp-frontend      1/1     1            1           21m
+gdm-backend       1/1     1            1           52s
+gdm-frontend      1/1     1            1           52s
+search-backend    1/1     1            1           21h
+search-frontend   1/1     1            1           21h
+```

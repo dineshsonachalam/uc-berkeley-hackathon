@@ -4,13 +4,13 @@ replicas: 1
 diversityBackend:
     image: dineshsonachalam/gender-diversity-backend:latest
     containerPort: 8002
-    appName: diversity-backend
+    appName: gdm-backend
     ingressRoute: (Host(`api-diversity.dineshsonachalam.com`))
 
 diversityFrontend:
     image: dineshsonachalam/gender-diversity-frontend:latest
     containerPort: 3000   
-    appName: diversity-frontend
+    appName: gdm-frontend
     ingressRoute: (Host(`diversity.dineshsonachalam.com`))
 
 
