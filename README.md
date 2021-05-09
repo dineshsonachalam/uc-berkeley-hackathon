@@ -1,7 +1,16 @@
-# [Diversity metrics](https://diversity.dineshsonachalam.me/)
-[![](https://img.shields.io/docker/pulls/dineshsonachalam/survaider.svg)](https://hub.docker.com/r/dineshsonachalam/survaider)
-[![](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7-blue.svg)](https://www.python.org/downloads/release/python-370/)
-[![](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/dineshsonachalam/Survaider/blob/master/LICENSE)
+# [Diversity metrics](https://diversity.dineshsonachalam.com/)
+
+<p>
+  <a href="https://github.com/dineshsonachalam/gender-diversity-metrics/actions" alt="CI/CD status">
+      <img src="https://github.com/dineshsonachalam/gender-diversity-metrics/actions/workflows/k8-deploy.yml/badge.svg" />
+  </a>
+  <a href="https://www.python.org/downloads/release/python-390/" alt="Python 3.9">
+      <img src="https://img.shields.io/badge/python-3.9-blue.svg" />
+  </a>
+  <a href="https://hub.docker.com/repository/docker/dineshsonachalam/gender-diversity-backend" alt="Docker pulls">
+      <img src="https://img.shields.io/docker/pulls/dineshsonachalam/gender-diversity-backend.svg" />
+  </a>
+</p>
 
 ### Web app task:
 ```
@@ -110,4 +119,55 @@ dineshsonachalam@macbook gender-diversity-metrics %
 ```
 dineshsonachalam@macbook gender-diversity-metrics % kubectl cp ./mysql-dump/adult_dataset.sql dinesh/mysql-0:docker-entrypoint-initdb.d
 dineshsonachalam@macbook gender-diversity-metrics %
+root@mysql-0:/# ls /docker-entrypoint-initdb.d
+adp.sql  adult_dataset.sql  lost+found
+root@mysql-0:/#
+
+
+
+kubectl rollout restart sts mysql -n=dinesh
+
+dineshsonachalam@macbook ~ % kubectl rollout restart sts mysql -n=dinesh
+statefulset.apps/mysql restarted
+dineshsonachalam@macbook ~ %
+
+kubectl exec -it mysql-0 /bin/bash -n=dinesh 
 ```
+
+root@mysql-0:/docker-entrypoint-initdb.d# ls
+adp.sql  adult_dataset.sql  dinesh.sql	lost+found
+root@mysql-0:/docker-entrypoint-initdb.d#
+
+mysql -u root -psimple < /docker-entrypoint-initdb.d/adult_dataset.sql
+
+
+root@mysql-0:/docker-entrypoint-initdb.d# ls
+adp.sql  adult_dataset.sql  lost+found
+root@mysql-0:/docker-entrypoint-initdb.d# mysql -u root -psimple
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 5.7.34 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| adp                |
+| adult_dataset      |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql>
