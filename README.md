@@ -106,3 +106,8 @@ search-backend-8647cdb658-mbn97    1/1     Running   0          22h
 search-frontend-6f6876fc7f-2jmps   1/1     Running   0          22h
 dineshsonachalam@macbook gender-diversity-metrics %
 ```
+
+```
+dineshsonachalam@macbook gender-diversity-metrics % kubectl cp ./mysql-dump/adult_dataset.sql dinesh/mysql-0:docker-entrypoint-initdb.d
+dineshsonachalam@macbook gender-diversity-metrics %
+```

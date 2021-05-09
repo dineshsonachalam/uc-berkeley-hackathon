@@ -4,7 +4,7 @@ describe("Search kings", () => {
     })
 
     it('Compare employee details', () => {
-        // cy.wait(10000)
+        cy.wait(10000)
         let expected_adult_data = [
             {
                 "age": "39",
