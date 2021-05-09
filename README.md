@@ -80,4 +80,29 @@ gdm-backend       1/1     1            1           52s
 gdm-frontend      1/1     1            1           52s
 search-backend    1/1     1            1           21h
 search-frontend   1/1     1            1           21h
+
+
+kubectl cp ./mysql-dump/adult_dataset.sql dinesh/mysql-0:docker-entrypoint-initdb.d 
+dineshsonachalam@macbook gender-diversity-metrics % kubectl get pods -n=dinesh
+NAME                               READY   STATUS    RESTARTS   AGE
+adp-backend-6ff9d4684f-5jpm5       1/1     Running   0          6m58s
+adp-frontend-564d9f786d-rmhjl      1/1     Running   0          6m47s
+elasticsearch-0                    1/1     Running   0          22h
+gdm-backend-b7dfb98d8-vxh6h        1/1     Running   0          6m19s
+gdm-frontend-86d46694bc-fpfkm      1/1     Running   0          6m19s
+mysql-0                            1/1     Running   0          26m
+search-backend-8647cdb658-mbn97    1/1     Running   0          22h
+search-frontend-6f6876fc7f-2jmps   1/1     Running   0          22h
+dineshsonachalam@macbook gender-diversity-metrics % kubectl cp ./mysql-dump/adult_dataset.sql dinesh/mysql-0:docker-entrypoint-initdb.d
+dineshsonachalam@macbook gender-diversity-metrics % kubectl get pods -n=dinesh
+NAME                               READY   STATUS    RESTARTS   AGE
+adp-backend-6ff9d4684f-5jpm5       1/1     Running   0          7m35s
+adp-frontend-564d9f786d-rmhjl      1/1     Running   0          7m24s
+elasticsearch-0                    1/1     Running   0          22h
+gdm-backend-b7dfb98d8-vxh6h        1/1     Running   0          6m56s
+gdm-frontend-86d46694bc-fpfkm      1/1     Running   0          6m56s
+mysql-0                            1/1     Running   0          27m
+search-backend-8647cdb658-mbn97    1/1     Running   0          22h
+search-frontend-6f6876fc7f-2jmps   1/1     Running   0          22h
+dineshsonachalam@macbook gender-diversity-metrics %
 ```
