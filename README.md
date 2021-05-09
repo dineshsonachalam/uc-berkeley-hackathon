@@ -57,7 +57,7 @@ Flask==1.0.2
 ### Start application:
 
 ```
-docker run -p 8001:8001 -t dineshsonachalam/survaider:1.0.0
+docker run -p 8002:8002 -t dineshsonachalam/survaider:1.0.0
 ```
 
 
