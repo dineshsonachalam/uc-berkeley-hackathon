@@ -21,7 +21,7 @@ jobs:
             -e "MYSQL_DATABASE=adult_dataset" \
             -v $(pwd)/mysql-dump:/docker-entrypoint-initdb.d \
             mysql:5.7 \
-            --max_allowed_packet=32505856
+            --max_allowed_packet=62505856
             echo $(pwd)
             ls
             sleep 15
@@ -35,6 +35,7 @@ jobs:
           run: |
             python3 backend/main.py &
             sleep 25
+            docker exec -i mysql sh -c 'mysql -u root -psimple  --execute="SHOW DATABASES;"; exit $?'
             curl --location --request GET 'http://0.0.0.0:8002/gender/stats'
 
 
