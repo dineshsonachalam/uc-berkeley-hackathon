@@ -19,7 +19,8 @@ jobs:
             -d -p 3306:3306 \
             -e "MYSQL_ROOT_PASSWORD=simple" \
             -v $(pwd)/mysql-dump:/docker-entrypoint-initdb.d \
-            mysql:5.7
+            mysql:5.7 \
+            --max-allowed-packet=87108864
             echo $(pwd)
             ls
             sleep 15
