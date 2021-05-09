@@ -23,8 +23,6 @@ jobs:
             mysql:5.7
             echo $(pwd)
             ls
-            sleep 25
-            docker exec -i mysql sh -c 'mysql -u root -psimple  --execute="SHOW DATABASES;"; exit $?'
 
         - name: Install backend and frontend dependencies
           run: |
@@ -34,8 +32,6 @@ jobs:
         - name: Start backend and frontend applications in the background
           run: |
             python3 backend/main.py &
-            sleep 5
-            curl --location --request GET 'http://0.0.0.0:8001/battles'
 
         - name: API testing
           run: |

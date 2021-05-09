@@ -1,0 +1,17 @@
+namespace: dinesh
+replicas: 1
+
+adpBackend:
+    image: dineshsonachalam/gender-diversity-backend:latest
+    containerPort: 8002
+    appName: adp-backend
+    ingressRoute: (Host(`api-diversity.dineshsonachalam.com`))
+
+adpFrontend:
+    image: dineshsonachalam/gender-diversity-frontend:latest
+    containerPort: 3000   
+    appName: adp-frontend
+    ingressRoute: (Host(`diversity.dineshsonachalam.com`))
+
+
+
