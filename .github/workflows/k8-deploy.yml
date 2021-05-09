@@ -24,8 +24,7 @@ jobs:
             --max_allowed_packet=32505856
             echo $(pwd)
             ls
-            sleep 25
-            docker exec -i mysql sh -c 'mysql -u root -psimple  --execute="SHOW DATABASES;"; exit $?'
+            sleep 15
 
         - name: Install backend and frontend dependencies
           run: |
