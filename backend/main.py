@@ -12,9 +12,9 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Blueprints
 app.register_blueprint(adult_stats_blueprint)
-execute_sql_file()
 
 if __name__ == "__main__":
+    execute_sql_file()
     app_host = '0.0.0.0'
     app_port = 8002
     app.run(host=app_host, port=app_port, debug=False, threaded=True)
