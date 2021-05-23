@@ -12,15 +12,16 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
-        - name: Start the mysql container
+        - name: Start the Postgres container
           run: |
-            echo "127.0.0.1 mysql" | sudo tee -a /etc/hosts
-            docker run --name mysql \
-            -d -p 3306:3306 \
-            -e "MYSQL_ROOT_PASSWORD=simple" \
-            -v $(pwd)/mysql-dump:/docker-entrypoint-initdb.d \
-            mysql:5.7 \
-            --max-allowed-packet=87108864
+            echo "127.0.0.1 postgres" | sudo tee -a /etc/hosts
+            docker run --name postgres \
+            -d -p 5432:5432 \
+            -e "POSTGRES_USER=dinesh" \
+            -e "POSTGRES_PASSWORD=simple" \
+            -e "POSTGRES_DB=dinesh-micro-apps" \
+            -v $(pwd)/data:/var/lib/postgresql/data:z \
+            postgres:9.6.21 
             echo $(pwd)
             ls
             sleep 15
@@ -35,9 +36,6 @@ jobs:
           run: |
             python3 backend/main.py &
             sleep 25
-            docker exec -i mysql sh -c 'mysql -u root -psimple  --execute="SHOW DATABASES;"; exit $?'
-            curl --location --request GET 'http://0.0.0.0:8002/gender/stats'
-
 
         - name: API testing
           run: |
