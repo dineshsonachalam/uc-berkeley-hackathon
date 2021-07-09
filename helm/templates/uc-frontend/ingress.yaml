@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Values.berkeleyFrontend.appName }}
+  namespace: {{ .Values.namespace }}
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: {{ .Values.berkeleyFrontend.ingressRoute }}
+    kind: Rule
+    services:
+    - name: {{ .Values.berkeleyFrontend.appName }}
+      port: {{ .Values.berkeleyFrontend.containerPort }}   

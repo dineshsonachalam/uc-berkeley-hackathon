@@ -1,17 +1,17 @@
 namespace: dinesh
 replicas: 1
 
-diversityBackend:
-    image: dineshsonachalam/gender-diversity-backend:latest
+berkeleyBackend:
+    image: dineshsonachalam/gender-berkeley-backend:latest
     containerPort: 8002
-    appName: gdm-backend
-    ingressRoute: (Host(`api-diversity.dineshsonachalam.com`))
+    appName: uc-backend
+    ingressRoute: (Host(`api-berkeley.dineshsonachalam.com`))
 
-diversityFrontend:
-    image: dineshsonachalam/gender-diversity-frontend:latest
+berkeleyFrontend:
+    image: dineshsonachalam/gender-berkeley-frontend:latest
     containerPort: 3000   
-    appName: gdm-frontend
-    ingressRoute: (Host(`diversity.dineshsonachalam.com`))
+    appName: uc-frontend
+    ingressRoute: (Host(`berkeley.dineshsonachalam.com`))
 
 
 

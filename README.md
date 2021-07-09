@@ -2,7 +2,7 @@
   <img src="https://miro.medium.com/max/4800/1*i5VHWsPa9k-u9ffVz0CQdw.jpeg" alt="BerkeleyHackathon">
 </p>
 <p align="center">
-    <em>Gender diversity metrics - Powered by Python, PostgreSQL, React, Redux, Kubernetes, Cypress E2E and Github CI/CD</em>
+    <em>Gender berkeley metrics - Powered by Python, PostgreSQL, React, Redux, Kubernetes, Cypress E2E and Github CI/CD</em>
 </p>
 <p  align="center">
   <a href="https://github.com/dineshsonachalam/UC-Berkeley-Hackathon/actions/workflows/k8-deploy.yml" alt="CI/CD status">
@@ -11,8 +11,8 @@
   <a href="https://www.python.org/downloads/release/python-390/" alt="Python 3.9">
       <img src="https://img.shields.io/badge/python-3.9-blue.svg" />
   </a>
-  <a href="https://hub.docker.com/repository/docker/dineshsonachalam/gender-diversity-backend" alt="Docker pulls">
-      <img src="https://img.shields.io/docker/pulls/dineshsonachalam/gender-diversity-backend.svg" />
+  <a href="https://hub.docker.com/repository/docker/dineshsonachalam/gender-berkeley-backend" alt="Docker pulls">
+      <img src="https://img.shields.io/docker/pulls/dineshsonachalam/gender-berkeley-backend.svg" />
   </a>
 </p>
 
@@ -75,17 +75,17 @@ docker run -p 8002:8002 -t dineshsonachalam/survaider:1.0.0
 
 
 ```
-dineshsonachalam@macbook gender-diversity-metrics % helm install gender-diversity-app ./helm
-NAME: gender-diversity-app
+dineshsonachalam@macbook gender-berkeley-metrics % helm install berkeley-app ./helm
+NAME: gender-berkeley-app
 LAST DEPLOYED: Sun May  9 20:57:33 2021
 NAMESPACE: kube-system
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
-dineshsonachalam@macbook gender-diversity-metrics %
+dineshsonachalam@macbook gender-berkeley-metrics %
 ```
 ```
-dineshsonachalam@macbook gender-diversity-metrics % kubectl get deployments -n=dinesh
+dineshsonachalam@macbook gender-berkeley-metrics % kubectl get deployments -n=dinesh
 NAME              READY   UP-TO-DATE   AVAILABLE   AGE
 adp-backend       1/1     1            1           21m
 adp-frontend      1/1     1            1           21m
@@ -96,7 +96,7 @@ search-frontend   1/1     1            1           21h
 
 
 kubectl cp ./mysql-dump/adult_dataset.sql dinesh/mysql-0:docker-entrypoint-initdb.d 
-dineshsonachalam@macbook gender-diversity-metrics % kubectl get pods -n=dinesh
+dineshsonachalam@macbook gender-berkeley-metrics % kubectl get pods -n=dinesh
 NAME                               READY   STATUS    RESTARTS   AGE
 adp-backend-6ff9d4684f-5jpm5       1/1     Running   0          6m58s
 adp-frontend-564d9f786d-rmhjl      1/1     Running   0          6m47s
@@ -106,8 +106,8 @@ gdm-frontend-86d46694bc-fpfkm      1/1     Running   0          6m19s
 mysql-0                            1/1     Running   0          26m
 search-backend-8647cdb658-mbn97    1/1     Running   0          22h
 search-frontend-6f6876fc7f-2jmps   1/1     Running   0          22h
-dineshsonachalam@macbook gender-diversity-metrics % kubectl cp ./mysql-dump/adult_dataset.sql dinesh/mysql-0:docker-entrypoint-initdb.d
-dineshsonachalam@macbook gender-diversity-metrics % kubectl get pods -n=dinesh
+dineshsonachalam@macbook gender-berkeley-metrics % kubectl cp ./mysql-dump/adult_dataset.sql dinesh/mysql-0:docker-entrypoint-initdb.d
+dineshsonachalam@macbook gender-berkeley-metrics % kubectl get pods -n=dinesh
 NAME                               READY   STATUS    RESTARTS   AGE
 adp-backend-6ff9d4684f-5jpm5       1/1     Running   0          7m35s
 adp-frontend-564d9f786d-rmhjl      1/1     Running   0          7m24s
@@ -117,12 +117,12 @@ gdm-frontend-86d46694bc-fpfkm      1/1     Running   0          6m56s
 mysql-0                            1/1     Running   0          27m
 search-backend-8647cdb658-mbn97    1/1     Running   0          22h
 search-frontend-6f6876fc7f-2jmps   1/1     Running   0          22h
-dineshsonachalam@macbook gender-diversity-metrics %
+dineshsonachalam@macbook gender-berkeley-metrics %
 ```
 
 ```
-dineshsonachalam@macbook gender-diversity-metrics % kubectl cp ./mysql-dump/adult_dataset.sql dinesh/mysql-0:docker-entrypoint-initdb.d
-dineshsonachalam@macbook gender-diversity-metrics %
+dineshsonachalam@macbook gender-berkeley-metrics % kubectl cp ./mysql-dump/adult_dataset.sql dinesh/mysql-0:docker-entrypoint-initdb.d
+dineshsonachalam@macbook gender-berkeley-metrics %
 root@mysql-0:/# ls /docker-entrypoint-initdb.d
 adp.sql  adult_dataset.sql  lost+found
 root@mysql-0:/#

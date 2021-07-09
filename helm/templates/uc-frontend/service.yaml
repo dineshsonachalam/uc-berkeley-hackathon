@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.berkeleyFrontend.appName }}
+  namespace: {{ .Values.namespace }}
+spec:
+  ports:
+    - protocol: TCP
+      name: web
+      port: {{ .Values.berkeleyFrontend.containerPort }}   
+  selector:
+    app: {{ .Values.berkeleyFrontend.appName }}

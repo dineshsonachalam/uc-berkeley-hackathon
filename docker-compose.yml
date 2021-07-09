@@ -15,16 +15,16 @@ services:
     volumes:
       - ./data:/var/lib/postgresql/data:z # persist data even if container shuts down
   
-  backend:
-    image: "dineshsonachalam/gender-diversity-backend:latest"
-    environment:
-      - PYTHONUNBUFFERED=1
-    networks:
-      - frontend
-    ports:
-      - "8002:8002"
-    depends_on:
-      - postgres
+  # backend:
+  #   image: "dineshsonachalam/gender-berkeley-backend:latest"
+  #   environment:
+  #     - PYTHONUNBUFFERED=1
+  #   networks:
+  #     - frontend
+  #   ports:
+  #     - "8002:8002"
+  #   depends_on:
+  #     - postgres
       
 networks:
   frontend:

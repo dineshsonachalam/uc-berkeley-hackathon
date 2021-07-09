@@ -1,0 +1,25 @@
+# 1. Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ .Values.berkeleyFrontend.appName }}
+  name: {{ .Values.berkeleyFrontend.appName }}
+  namespace: {{ .Values.namespace }}
+spec:  
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.berkeleyFrontend.appName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.berkeleyFrontend.appName }}
+    spec:
+      containers:
+      - name: {{ .Values.berkeleyFrontend.appName }}
+        image: {{ .Values.berkeleyFrontend.image }}
+        imagePullPolicy: Always          
+        ports:
+        - containerPort: {{ .Values.berkeleyFrontend.containerPort }}   
+          name: {{ .Values.berkeleyFrontend.appName }}   
