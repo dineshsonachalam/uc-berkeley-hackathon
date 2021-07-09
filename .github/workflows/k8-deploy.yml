@@ -81,24 +81,24 @@ jobs:
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
-        args: rollout restart deployment gdm-backend -n=dinesh
+        args: rollout restart deployment uc-backend -n=dinesh
     - name: Verify deployment for Backend app
       uses: steebchen/kubectl@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         KUBECTL_VERSION: "1.15"
       with:
-        args: rollout status deployment/gdm-backend -n=dinesh
+        args: rollout status deployment/uc-backend -n=dinesh
     - name: Frontend deployment rolling restart to fetch recently build docker image from docker hub.
       uses: steebchen/kubectl@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
-        args: rollout restart deployment gdm-frontend -n=dinesh
+        args: rollout restart deployment uc-frontend -n=dinesh
     - name: Verify deployment for Frontend app
       uses: steebchen/kubectl@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         KUBECTL_VERSION: "1.15"
       with:
-        args: rollout status deployment/gdm-frontend -n=dinesh
+        args: rollout status deployment/uc-frontend -n=dinesh
