@@ -2,7 +2,7 @@
   <img src="https://miro.medium.com/max/4800/1*i5VHWsPa9k-u9ffVz0CQdw.jpeg" alt="BerkeleyHackathon">
 </p>
 <p align="center">
-    <em>Gender berkeley metrics - Powered by Python, PostgreSQL, React, Redux, Kubernetes, Cypress E2E and Github CI/CD</em>
+    <em>Chicago gender diversity metrics - Powered by Python, PostgreSQL, React, Redux, Kubernetes, Cypress E2E and Github CI/CD</em>
 </p>
 <p  align="center">
   <a href="https://github.com/dineshsonachalam/UC-Berkeley-Hackathon/actions/workflows/k8-deploy.yml" alt="CI/CD status">
