@@ -10,14 +10,14 @@ const initialState = {
 const genderStatsReducer = (state=initialState, actions) => {
     switch(actions.type) {
         case UPDATE_GENDER_STATS:
-            return {...state, gender_stats: actions.payload.gender_stats}
+            return {...state, gender_stats: actions.payload.gender_stats};
         case UPDATE_RELATIONSHIP_STATS:
-            return {...state, relationship_stats: actions.payload.relationship_stats}
+            return {...state, relationship_stats: actions.payload.relationship_stats};
         case UPDATE_ADULT_STATS:
-            return {...state, adult_stats: actions.payload.adult_stats}
+            return {...state, adult_stats: actions.payload.adult_stats};
         default:
-            return {...state}
+            return {...state};
     }
-}
+};
 
 export default genderStatsReducer;

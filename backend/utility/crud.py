@@ -1,7 +1,6 @@
-from sqlalchemy import create_engine, MetaData, Table, func, text, inspect
+from sqlalchemy import create_engine, MetaData, Table, text, inspect
 from sqlalchemy.pool import NullPool
 from sqlalchemy.orm import sessionmaker
-import json
 
 SQLALCHEMY_DATABASE_URL = "postgresql://dinesh:simple@postgres:5432/dinesh-micro-apps"
 

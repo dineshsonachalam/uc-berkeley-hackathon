@@ -13,7 +13,6 @@ class GenderStatsBarChart extends React.Component {
                 seriesField: "gender",
                 legend: { position: "top-left" },
             };
-            console.log("Config: ", config);
             return (
                 
                 <div>
@@ -33,11 +32,11 @@ class GenderStatsBarChart extends React.Component {
 
 const mapStateToProps = (state) => {
       return state.genderStatsReducer;
-}
+};
     
 const mapDispatchToProps = (dispatch) => {
-      return {}
-}
+      return {};
+};
     
 export default connect(mapStateToProps, mapDispatchToProps)(GenderStatsBarChart);
 

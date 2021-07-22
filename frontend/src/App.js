@@ -4,7 +4,7 @@ import RelationshipStatsBarChart from "./components/RelationshipStatsBarChart";
 import AdultStatsTable from "./components/AdultStatsTable";
 
 
-import Nav from "./components/Nav"
+import Nav from "./components/Nav";
 import {  updateGenderStats, updateRelationshipStats, updateAdultStats } from "./redux/actions";
 import { connect } from "react-redux";
 
@@ -19,9 +19,9 @@ class App extends React.Component {
   }
 
   async componentDidMount(){
-      let gender_stats_url = process.env.REACT_APP_API_ENDPOINT + "/gender/stats"
-      let relationship_stats_url = process.env.REACT_APP_API_ENDPOINT + "/relationship/stats"
-      let adult_stats_url = process.env.REACT_APP_API_ENDPOINT + "/adult/stats"
+      let gender_stats_url = process.env.REACT_APP_API_ENDPOINT + "/gender/stats";
+      let relationship_stats_url = process.env.REACT_APP_API_ENDPOINT + "/relationship/stats";
+      let adult_stats_url = process.env.REACT_APP_API_ENDPOINT + "/adult/stats";
       const gender_stats_data = await this.getData(gender_stats_url);
       const relationship_stats_data = await this.getData(relationship_stats_url);
       const adult_stats_data = await this.getData(adult_stats_url);
@@ -38,7 +38,7 @@ class App extends React.Component {
             <RelationshipStatsBarChart/>
             <AdultStatsTable/> 
         </div>
-      )
+      );
     }else {
       return (
         <div style={{display: "flex",  justifyContent:"center", alignItems:"center", height: "100vh"}}>
@@ -46,8 +46,7 @@ class App extends React.Component {
                 <Spin tip="Loading..." size="large" />
           </Space>
         </div>
-      )
-
+      );
     }
   }
   render(){
@@ -70,16 +69,15 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return state.genderStatsReducer;
-  
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updateGenderStats: (gender_stats) => dispatch(updateGenderStats(gender_stats)),
     updateRelationshipStats: (relationship_stats) => dispatch(updateRelationshipStats(relationship_stats)),
     updateAdultStats: (adult_stats) => dispatch(updateAdultStats(adult_stats))
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 

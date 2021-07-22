@@ -1,7 +1,7 @@
 # Import Necessary Libraries
 from flask import Flask
-from flask_cors import CORS, cross_origin
-import os
+from flask_cors import CORS
+
 
 from utility.crud import execute_sql_file
 from routes.adult_stats import adult_stats_blueprint
