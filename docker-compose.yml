@@ -13,8 +13,9 @@ services:
       - POSTGRES_PASSWORD=simple
       - POSTGRES_DB=dinesh-micro-apps
     volumes:
-      - ./data:/var/lib/postgresql/data:z # persist data even if container shuts down
-  
+      - ./backend/adult_dataset.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./data:/var/lib/postgresql/data/
+
   # backend:
   #   image: "dineshsonachalam/gender-berkeley-backend:latest"
   #   environment:
