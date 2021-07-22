@@ -1,5 +1,5 @@
 // Step 3: Create reducers for the action types
-import {UPDATE_GENDER_STATS, UPDATE_RELATIONSHIP_STATS, UPDATE_ADULT_STATS} from '../actionTypes';
+import {UPDATE_GENDER_STATS, UPDATE_RELATIONSHIP_STATS, UPDATE_ADULT_STATS} from "../actionTypes";
 
 const initialState = { 
     gender_stats: [],

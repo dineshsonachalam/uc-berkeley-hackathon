@@ -4,7 +4,7 @@ sys.path.append("..")
 from utility.crud import get_male_count, get_female_count, get_relationship_stats, get_adult_data
 
 # Creating a blueprint class
-adult_stats_blueprint = Blueprint('adult_stats',__name__,template_folder='templates') 
+adult_stats_blueprint = Blueprint('adult_stats',__name__,template_folder='templates')
 
 @adult_stats_blueprint.route('/gender/stats',methods=['GET'])
 def gender_stats():
@@ -55,7 +55,7 @@ def relationship_stats():
             }
         ]
         return jsonify(gender_stats)
- 
+
 @adult_stats_blueprint.route('/adult/stats',methods=['GET'])
 def adult_data():
     if request.method == 'GET':

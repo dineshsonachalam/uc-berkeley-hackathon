@@ -1,9 +1,9 @@
 describe("Search kings", () => {
-    it('Load search page', () => {
+    it("Load search page", () => {
         cy.visit("http://localhost:3000")
     })
 
-    it('Compare employee details', () => {
+    it("Compare employee details", () => {
         cy.wait(10000)
         let expected_adult_data = [
             {

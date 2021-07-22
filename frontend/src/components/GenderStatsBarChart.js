@@ -1,17 +1,17 @@
-import React from 'react';
-import { Bar } from '@ant-design/charts';
-import { connect } from 'react-redux';
-import { PageHeader} from 'antd';
+import React from "react";
+import { Bar } from "@ant-design/charts";
+import { connect } from "react-redux";
+import { PageHeader} from "antd";
 
 class GenderStatsBarChart extends React.Component {
 
       render() {
             const config = {
                 data: this.props.gender_stats,
-                xField: 'value',
-                yField: 'gender',
-                seriesField: 'gender',
-                legend: { position: 'top-left' },
+                xField: "value",
+                yField: "gender",
+                seriesField: "gender",
+                legend: { position: "top-left" },
             };
             console.log("Config: ", config);
             return (

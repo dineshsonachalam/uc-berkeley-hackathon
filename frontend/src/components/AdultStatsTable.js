@@ -1,40 +1,40 @@
-import React from 'react';
-import { Table} from 'antd';
-import { connect } from 'react-redux';
-import { PageHeader} from 'antd';
+import React from "react";
+import { Table} from "antd";
+import { connect } from "react-redux";
+import { PageHeader} from "antd";
 class AdultStatsTable extends React.Component { 
       render() {
             const columns = [
                   {
-                        title: 'Age',
-                        dataIndex: 'age',
-                        key: 'id',
+                        title: "Age",
+                        dataIndex: "age",
+                        key: "id",
                   },
                   {
-                        title: 'Education',
-                        dataIndex: 'education',
-                        key: 'education'
+                        title: "Education",
+                        dataIndex: "education",
+                        key: "education"
                   },
                   {
-                        title: 'Marital status',
-                        dataIndex: 'marital_status',
-                        key: 'marital_status',
+                        title: "Marital status",
+                        dataIndex: "marital_status",
+                        key: "marital_status",
                   },
                   {
-                        title: 'Native country',
-                        dataIndex: 'native_country',
-                        key: 'native_country',
+                        title: "Native country",
+                        dataIndex: "native_country",
+                        key: "native_country",
                   },
                   {
-                        title: 'Salary',
-                        dataIndex: 'salary',
-                        key: 'salary',
+                        title: "Salary",
+                        dataIndex: "salary",
+                        key: "salary",
                   },
                   {
-                        title: 'Gender',
-                        dataIndex: 'sex',
-                        key: 'sex',
-                        width: '20%',
+                        title: "Gender",
+                        dataIndex: "sex",
+                        key: "sex",
+                        width: "20%",
                   }
             ]; 
             return (

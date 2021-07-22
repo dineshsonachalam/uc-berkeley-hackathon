@@ -1,14 +1,14 @@
-import React from 'react';
-import GenderStatsBarChart from './components/GenderStatsBarChart';
-import RelationshipStatsBarChart from './components/RelationshipStatsBarChart';
-import AdultStatsTable from './components/AdultStatsTable';
+import React from "react";
+import GenderStatsBarChart from "./components/GenderStatsBarChart";
+import RelationshipStatsBarChart from "./components/RelationshipStatsBarChart";
+import AdultStatsTable from "./components/AdultStatsTable";
 
 
 import Nav from "./components/Nav"
 import {  updateGenderStats, updateRelationshipStats, updateAdultStats } from "./redux/actions";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import { Layout, Spin, Space} from 'antd';
+import { Layout, Spin, Space} from "antd";
 
 const { Footer, Content } = Layout;
 
@@ -41,7 +41,7 @@ class App extends React.Component {
       )
     }else {
       return (
-        <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
+        <div style={{display: "flex",  justifyContent:"center", alignItems:"center", height: "100vh"}}>
           <Space size="middle">
                 <Spin tip="Loading..." size="large" />
           </Space>
@@ -60,7 +60,7 @@ class App extends React.Component {
             </div>
         </Content>
         <div  style={ (this.props.gender_stats && (this.props.gender_stats).length>0) ? {}: { position:"absolute", bottom:0, color: "blue", width:"100%"  } }>
-            <Footer style={{ textAlign: 'center' }}> Developed with ❤️ by <a href="https://github.com/dineshsonachalam/gender-berkeley-metrics" rel="noreferrer" target="_blank">Dinesh Sonachalam</a> © {(new Date().getFullYear())}</Footer> 
+            <Footer style={{ textAlign: "center" }}> Developed with ❤️ by <a href="https://github.com/dineshsonachalam/gender-berkeley-metrics" rel="noreferrer" target="_blank">Dinesh Sonachalam</a> © {(new Date().getFullYear())}</Footer> 
         </div>
       </div>
     );
