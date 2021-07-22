@@ -8,7 +8,7 @@ def get_sql_session():
     # Define the MySQL engine using MySQL Connector/Python
     db = create_engine(SQLALCHEMY_DATABASE_URL, poolclass=NullPool)
     metadata = MetaData()
-    table = Table('adult', metadata, autoload=True, autoload_with=db)  
+    table = Table('adult', metadata, autoload=True, autoload_with=db)
     session = sessionmaker(bind=db)
     session = session()
     return table, session

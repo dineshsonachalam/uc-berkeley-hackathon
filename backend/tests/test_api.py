@@ -2,7 +2,7 @@ import requests
 
 def test_gender_stats():
     url = "http://0.0.0.0:8002/gender/stats"
-    response = requests.request("GET", url, headers={}, data={}) 
+    response = requests.request("GET", url, headers={}, data={})
     assert response.status_code == 200
     response = response.json()
     expected_response = [
