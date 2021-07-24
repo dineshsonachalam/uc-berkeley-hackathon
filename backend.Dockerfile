@@ -12,4 +12,3 @@ RUN chmod a+x /app/main.py
 RUN chmod a+x /app/gunicorn_config.py
 
 CMD ["gunicorn","--config","/app/gunicorn_config.py","main:app"]
-
