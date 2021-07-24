@@ -16,16 +16,16 @@ services:
       - ./backend/adult_dataset.sql:/docker-entrypoint-initdb.d/init.sql
       - ./data:/var/lib/postgresql/data/
 
-  # backend:
-  #   image: "dineshsonachalam/gender-berkeley-backend:latest"
-  #   environment:
-  #     - PYTHONUNBUFFERED=1
-  #   networks:
-  #     - frontend
-  #   ports:
-  #     - "8002:8002"
-  #   depends_on:
-  #     - postgres
+  backend:
+    image: "dineshsonachalam/gender-berkeley-backend:latest"
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - frontend
+    ports:
+      - "8002:8002"
+    depends_on:
+      - postgres
       
 networks:
   frontend:
