@@ -29,3 +29,7 @@
 ```sh
 sh dev-startup.sh
 ```
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/) © [dineshsonachalam](https://www.github.com/dineshsonachalam)
